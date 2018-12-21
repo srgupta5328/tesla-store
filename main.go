@@ -25,10 +25,16 @@ type TeslaDB interface {
 	ListVehicles() ([]*Tesla, error)
 
 	//AddTesla adds a Tesla to the database and returns a tesla object and an error
-	AddTesla() (*Tesla, error)
+	AddTesla(t *Tesla) (id string, err error)
 
 	//UpdateTesla edits info of an existing Tesla and returns an object and an error
-	UpdateTesla() (*Tesla, error)
+	UpdateTesla(t *Tesla) error
+
+	//GetTesla searches for tesla in database and returns the object and an error
+	GetTesla(id string) (*Tesla, error)
+
+	//Closes the database and frees up resources
+	Close() error
 }
 
 /*
