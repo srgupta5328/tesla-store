@@ -3,13 +3,15 @@ package main
 import (
 	"database/sql"
 	"fmt"
+
+	_ "github.com/lib/pq"
 )
 
 //Postgres Local development credentials
 const (
 	host     = "localhost"
 	port     = 5432
-	user     = "postgres"
+	user     = "tesla"
 	password = "tesla"
 	dbname   = "tesla_db"
 )
@@ -38,4 +40,5 @@ func InitDB() {
 
 func main() {
 	fmt.Println("Initializing project")
+	InitDB()
 }
