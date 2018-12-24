@@ -20,7 +20,7 @@ var storeDB *sql.DB
 
 //InitDB initializes the database
 func InitDB() {
-	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+"password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
+	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s"+"password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
 	fmt.Println(psqlInfo)
 
 	db, err := sql.Open("postgres", psqlInfo)

@@ -35,11 +35,13 @@ type TeslaDB interface {
 	Close() error
 }
 
-// SetTeslaID Utility function to set the tesla ID for a given tesla vehicle, this is the unique identifier for each object
+/*
+SetTeslaID Utility function to set the tesla ID
+for a given tesla vehicle, this is the unique identifier for each object
+*/
+
 func (t *Tesla) SetTeslaID() string {
 	u1 := uuid.NewV1()
-
 	t.ID = u1.String()
-
 	return t.ID
 }
