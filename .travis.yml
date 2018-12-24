@@ -7,7 +7,7 @@ go:
   - "1.10.x"
   - master
 
-  before_script:
+before_script:
   - go install -mod vendor github.com/golangci/golangci-lint/cmd/golangci-lint
 
 # script always runs to completion (set +e). If we have linter issues AND a
