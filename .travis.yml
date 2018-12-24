@@ -1,4 +1,4 @@
-sslanguage: go
+language: go
 
 sudo: false
 go:
