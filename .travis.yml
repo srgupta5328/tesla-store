@@ -1,4 +1,3 @@
-sudo: false
 
 language: go
 
@@ -7,9 +6,6 @@ go:
   - "1.8"
   - "1.10.x"
   - master
-
-  git:
-    depth: 1
 
   before_script:
   - go install -mod vendor github.com/golangci/golangci-lint/cmd/golangci-lint
@@ -20,5 +16,3 @@ go:
 script:
   - golangci-lint run       # run a bunch of code checkers/linters in parallel
   - go test -v -race ./...  # Run all the tests with the race detector enabled
-
-  
