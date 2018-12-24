@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-
 	uuid "github.com/satori/go.uuid"
 )
 
@@ -39,10 +37,8 @@ type TeslaDB interface {
 
 // SetTeslaID Utility function to set the tesla ID for a given tesla vehicle, this is the unique identifier for each object
 func (t *Tesla) SetTeslaID() string {
-	u1, err := uuid.NewV1()
-	if err != nil {
-		fmt.Printf("Error Setting the TeslaID: %s", err.Error())
-	}
+	u1 := uuid.NewV1()
+
 	t.ID = u1.String()
 
 	return t.ID
