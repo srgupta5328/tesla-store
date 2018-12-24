@@ -42,7 +42,7 @@ Utility function to set the tesla ID for a given tesla vehicle, this is the uniq
 each object
 */
 
-func (t *Tesla) setTeslaID() string {
+func (t *Tesla) SetTeslaID() string {
 	u1, err := uuid.NewV1()
 	if err != nil {
 		fmt.Printf("Error Setting the TeslaID: %s", err.Error())
