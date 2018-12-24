@@ -10,11 +10,13 @@ go:
 git:
   depth: 1
 
-# skip the install step. don't `go get` deps. only build with code in vendor/
-install: true
 
 notifications:
   email: false
+
+# like script, but with set -e
+before_script:
+  - go install ./vendor/github.com/golangci/golangci-lint/cmd/golangci-lint
 
 # like before_script, but with set +e
 script:
