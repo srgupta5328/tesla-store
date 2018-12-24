@@ -1,11 +1,17 @@
-
 language: go
 
 go:
   - "1.x"
+  - 1.6.x
+  - 1.7.x
   - "1.8"
   - "1.10.x"
+  - 1.11.x
+  - tip
   - master
+
+notifications:
+  email: true 
 
 before_script:
   - go install -mod vendor github.com/golangci/golangci-lint/cmd/golangci-lint
@@ -16,3 +22,5 @@ before_script:
 script:
   - golangci-lint run       # run a bunch of code checkers/linters in parallel
   - go test -v -race ./...  # Run all the tests with the race detector enabled
+
+
