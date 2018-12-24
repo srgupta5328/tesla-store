@@ -16,10 +16,6 @@ install: true
 notifications:
   email: false
 
-# like script, but with set -e
-before_script:
-  - go install ./vendor/github.com/golangci/golangci-lint/cmd/golangci-lint
-
 # like before_script, but with set +e
 script:
   - golangci-lint run
